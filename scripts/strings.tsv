@@ -1,0 +1,138 @@
+# Tabs
+tab.today	Aujourd'hui	Today
+tab.program	Programme	Program
+tab.history	Historique	History
+tab.settings	Réglages	Settings
+# Common actions
+action.done	Fait	Done
+action.skip	Passer	Skip
+action.cancel	Annuler	Cancel
+action.save	Enregistrer	Save
+action.undo	Annuler	Undo
+action.log	Noter	Log
+action.close	Fermer	Close
+# Built-in exercises
+exercise.pullups	Tractions	Pull-ups
+exercise.chinups	Chin-ups	Chin-ups
+exercise.pushups	Pompes	Push-ups
+exercise.diamondPushups	Pompes diamant	Diamond push-ups
+exercise.dips	Dips	Dips
+exercise.squats	Squats	Squats
+exercise.pistolSquat	Pistol squat	Pistol squat
+exercise.lunges	Fentes	Lunges
+exercise.plank	Gainage	Plank
+exercise.hollowHold	Hollow hold	Hollow hold
+# Notifications
+notif.title	Bloc de %@	%@ block
+notif.item.reps	%1$@ %2$ld	%1$@ %2$ld
+notif.item.perSide	%1$@ %2$ld/côté	%1$@ %2$ld/side
+notif.item.seconds	%1$@ %2$ld s	%1$@ %2$ld s
+notif.item.secondsPerSide	%1$@ %2$ld s/côté	%1$@ %2$ld s/side
+# Today
+today.nextBlock	Prochain bloc	Next block
+today.noMoreBlocks	Plus de bloc prévu aujourd'hui. Tu peux quand même noter une série.	No more blocks today. You can still log a set.
+today.restDay	Jour de repos. Aucun rappel aujourd'hui.	Rest day. No reminders today.
+today.empty	Aucun exercice actif. Ajoute-en dans Programme.	No active exercise. Add some in Program.
+today.streak	%ld j	%ld d
+today.retestDueMany	Re-teste ton max : %@	Retest your max: %@
+today.overflow	%ld séries ne tiennent pas dans ta journée (voir Réglages).	%ld sets don't fit in your day (see Settings).
+today.notifDenied	Les rappels sont désactivés.	Reminders are off.
+today.openSettings	Ouvrir Réglages	Open Settings
+today.blockLogged	Bloc noté	Block logged
+today.setLogged	Série notée	Set logged
+today.count	%1$ld / %2$ld	%1$ld / %2$ld
+today.total	%1$ld séries sur %2$ld	%1$ld of %2$ld sets
+tally.a11y	%1$ld séries sur %2$ld	%1$ld of %2$ld sets
+logSet.title	Noter une série	Log a set
+today.openBlock	Détail du bloc	Block details
+unit.seconds	s	s
+unit.perSide	/ côté	/ side
+# Program
+program.paused	En pause	Paused
+program.pause	Pause	Pause
+program.resume	Reprendre	Resume
+program.add	Ajouter	Add
+program.row	%1$ld × %2$ld séries	%1$ld × %2$ld sets
+program.rowSeconds	%1$ld s × %2$ld séries	%1$ld s × %2$ld sets
+library.title	Bibliothèque	Library
+library.builtin	Prédéfinis	Built-in
+library.custom	Mes exercices	My exercises
+library.new	Nouvel exercice	New exercise
+library.active	Actif	Active
+library.edit	Modifier	Edit
+library.delete	Supprimer	Delete
+library.deleteConfirm	Supprimer « %@ » ?	Delete “%@”?
+library.archiveNote	Il a un historique : il sera archivé et ton historique conservé.	It has history: it will be archived and your history kept.
+library.deleteNote	Il sera supprimé définitivement.	It will be deleted for good.
+editor.editTitle	Modifier l'exercice	Edit exercise
+editor.name	Nom	Name
+editor.unit	Unité	Unit
+editor.perSide	Par côté	Per side
+editor.unitLocked	L'unité ne change plus une fois des séries ou un test notés.	The unit can't change once sets or a test are logged.
+editor.error.empty	Donne un nom à l'exercice.	Give the exercise a name.
+editor.error.tooLong	40 caractères maximum.	40 characters max.
+editor.error.duplicate	Un exercice porte déjà ce nom.	An exercise already has this name.
+unit.repsLong	Répétitions	Repetitions
+unit.secondsLong	Secondes	Seconds
+maxEntry.prompt	Combien en fais-tu d'affilée, au maximum ?	How many can you do in one go, at most?
+maxEntry.promptSeconds	Combien de secondes tiens-tu, au maximum ?	How many seconds can you hold, at most?
+maxEntry.test	Tester maintenant	Test now
+maxEntry.add	Ajouter au programme	Add to program
+detail.max	Max	Max
+detail.work	Travail	Work
+detail.reps	Reps	Reps
+detail.percentValue	%ld %%	%ld%%
+detail.history	Évolution du max	Max over time
+detail.workPercent	Travail : %ld %%	Work: %ld%%
+detail.manualReps	Reps fixées à la main	Set reps manually
+detail.repsValue	Reps : %ld	Reps: %ld
+detail.dailySets	Séries par jour : %ld	Sets per day: %ld
+detail.retestEvery	Re-test tous les %ld j	Retest every %ld d
+detail.nextRetest	Prochain re-test : %@	Next retest: %@
+detail.retest	Re-tester mon max	Retest my max
+retest.title	Nouveau max : %ld	New max: %ld
+retest.keep	Garder mes %ld reps	Keep my %ld reps
+retest.recalc	Passer à %ld reps	Switch to %ld reps
+maxTest.tapHint	Touche l'écran à chaque rep	Tap the screen for each rep
+maxTest.finish	Terminer	Finish
+maxTest.start	Départ	Start
+maxTest.stop	Stop	Stop
+maxTest.minusOne	Retirer une rep	Remove one rep
+maxTest.seconds	%ld s	%ld s
+# Onboarding
+onb.step1.title	Tes exercices	Your exercises
+onb.step1.body	Choisis ce que tu veux travailler. Tu pourras en ajouter plus tard.	Pick what you want to train. You can add more later.
+onb.step2.title	Tes max	Your max
+onb.step2.body	Entre ton max actuel ou teste-le. Tes reps de travail en découlent.	Enter your current max or test it. Your working reps come from it.
+onb.step3.title	Tes journées	Your days
+onb.step3.body	Les rappels tombent dans cette plage, jamais les jours de repos.	Reminders fall in this window, never on rest days.
+onb.next	Continuer	Continue
+onb.back	Retour	Back
+onb.finish	Activer les rappels	Turn on reminders
+settings.start	Début	Start
+settings.end	Fin	End
+settings.restDays	Jours de repos	Rest days
+# History
+history.legend.complete	objectif	goal met
+history.legend.partial	partiel	partial
+history.legend.rest	repos	rest
+history.legend.missed	manqué	missed
+history.record	record %ld j	best %ld d
+history.week	Cette semaine	This week
+history.weekEmpty	Rien de noté cette semaine.	Nothing logged this week.
+history.previousMonth	Mois précédent	Previous month
+history.nextMonth	Mois suivant	Next month
+history.today	aujourd'hui	today
+# Settings
+settings.window	Plage horaire	Time window
+settings.interval	Un bloc toutes les %ld min	A block every %ld min
+settings.blockSize	Jusqu'à %ld exercices par bloc	Up to %ld exercises per block
+settings.program	Programme	Program
+settings.defaultPercent	%% par défaut : %ld %%	Default %%: %ld%%
+settings.sound	Son des rappels	Reminder sound
+settings.notifications	Rappels	Reminders
+settings.notif.on	Activés	On
+settings.notif.off	Désactivés	Off
+settings.notif.ask	Autoriser	Allow
+settings.overflow	%ld séries ne tiennent pas dans ta journée. Baisse un objectif, élargis la plage ou raccourcis l'intervalle.	%ld sets don't fit in your day. Lower a goal, widen the window or shorten the interval.
+settings.overflowOk	Ton programme tient dans ta journée.	Your program fits in your day.

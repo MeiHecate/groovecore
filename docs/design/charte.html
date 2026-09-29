@@ -1,0 +1,422 @@
+<title>Charte GrooveCore</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ground: #0E0F10;
+    --graphite: #141516;
+    --surface: #1C1D1E;
+    --raised: #27282A;
+    --line: #333436;
+    --chalk: #EDEAE3;
+    --chalk-2: #A9A6A0;
+    --chalk-3: #6F6D69;
+    --berry: #FF4D6D;
+    --berry-dim: rgba(255,77,109,.16);
+    --mint: #5FD39A;
+    --amber: #F5B83D;
+    --sys: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    --disp: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  body { background: var(--ground); color: var(--chalk); font-family: var(--sys); font-size: 15px; line-height: 1.5; padding-inline: 20px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 96px; display: grid; gap: 72px; }
+  h1, h2, h3 { font-family: var(--disp); text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -.02em; line-height: 1.02; }
+  h2 { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
+  h3 { font-size: 15px; font-weight: 600; }
+  p { margin: 0; max-width: 64ch; color: var(--chalk-2); }
+  .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: var(--chalk-3); font-weight: 600; }
+  section { display: grid; gap: 24px; }
+  .head { display: grid; gap: 10px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+  .hero .lede { font-size: 18px; color: var(--chalk-2); max-width: 52ch; margin-top: 18px; }
+  .hero .lede b { color: var(--chalk); font-weight: 600; }
+  .icon { width: 148px; height: 148px; border-radius: 34px; background: var(--graphite); border: 1px solid var(--line); display: grid; place-items: center; }
+  .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 6px; background: var(--raised); color: var(--chalk-2); }
+  @media (max-width: 640px) { .hero { grid-template-columns: 1fr; } }
+
+  /* swatches */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .sw { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--graphite); }
+  .sw .chip { height: 72px; }
+  .sw .meta { padding: 10px 12px 12px; display: grid; gap: 2px; }
+  .sw .meta b { font-size: 14px; font-weight: 600; }
+  .sw .meta code { font-family: var(--mono); font-size: 12px; color: var(--chalk-3); }
+  .sw .meta span { font-size: 12.5px; color: var(--chalk-2); }
+  .light-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .light-row .l { display: flex; gap: 8px; align-items: center; padding: 6px 10px 6px 6px; border-radius: 10px; background: var(--surface); font-size: 12.5px; color: var(--chalk-2); }
+  .light-row .l i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--line); }
+  .light-row code { font-family: var(--mono); color: var(--chalk-3); }
+
+  /* type */
+  .typeset { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .trow { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding-block: 18px; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .trow .spec { font-size: 12.5px; color: var(--chalk-3); font-family: var(--mono); line-height: 1.45; }
+  @media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* rules */
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .rule { padding: 16px; border-radius: 14px; background: var(--graphite); border: 1px solid var(--line); display: grid; gap: 6px; align-content: start; }
+  .rule p { font-size: 14px; }
+
+  /* phones */
+  .phones { width: 100%; max-width: 680px; margin-inline: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px 20px; justify-items: center; }
+  .screen { display: grid; gap: 12px; width: 300px; max-width: 100%; }
+  .screen figcaption { display: grid; gap: 2px; }
+  .screen figcaption b { font-size: 14px; }
+  .screen figcaption span { font-size: 13px; color: var(--chalk-3); }
+  figure { margin: 0; }
+  .phone { width: 300px; max-width: 100%; height: 620px; border-radius: 46px; background: var(--ground); border: 8px solid #2A2B2D; box-shadow: 0 0 0 1px #3A3B3D; overflow: hidden; position: relative; display: flex; flex-direction: column; font-size: 13px; }
+  .status { height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; font-size: 12px; font-weight: 600; flex: none; }
+  .island { width: 84px; height: 24px; background: #000; border-radius: 12px; }
+  .body { flex: 1; padding: 6px 14px 0; -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent); mask-image: linear-gradient(to bottom, #000 88%, transparent); display: flex; flex-direction: column; gap: 12px; overflow: hidden; }
+  .tabbar { flex: none; height: 62px; border-top: 1px solid var(--line); background: #111213; display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 8px; }
+  .tab { display: grid; justify-items: center; gap: 3px; font-size: 9.5px; color: var(--chalk-3); }
+  .tab.on { color: var(--berry); }
+  .tab svg { width: 20px; height: 20px; }
+
+  .ptitle { display: flex; justify-content: space-between; align-items: end; }
+  .ptitle h4 { margin: 0; font-family: var(--disp); font-size: 26px; font-weight: 800; letter-spacing: -.01em; }
+  .ptitle small { font-size: 11px; color: var(--chalk-3); display: block; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+  .streak { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; color: var(--chalk); background: var(--surface); padding: 4px 9px; border-radius: 99px; }
+
+  .next { background: var(--surface); border-radius: 18px; padding: 14px; display: grid; gap: 10px; border: 1px solid var(--berry-dim); }
+  .next .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .next .top b { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--berry); }
+  .next .top span { font-size: 12px; color: var(--chalk-3); }
+  .next ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .next li { display: flex; justify-content: space-between; font-size: 14px; }
+  .next li em { font-style: normal; font-family: var(--disp); font-weight: 800; font-size: 17px; font-variant-numeric: tabular-nums; }
+  .btns { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+  .btn { border-radius: 12px; padding: 10px 14px; font-weight: 700; font-size: 14px; text-align: center; }
+  .btn.primary { background: var(--berry); color: #24070E; }
+  .btn.ghost { background: var(--raised); color: var(--chalk-2); }
+
+  .rows { display: grid; gap: 2px; background: var(--surface); border-radius: 16px; padding: 4px 12px; }
+  .ex { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; padding-block: 9px; border-bottom: 1px solid var(--line); align-items: center; }
+  .ex:last-child { border-bottom: 0; }
+  .ex .n { font-size: 13.5px; font-weight: 600; }
+  .ex .c { font-size: 11.5px; color: var(--chalk-3); font-variant-numeric: tabular-nums; text-align: right; }
+  .ex .tally { grid-column: 1 / -1; }
+  .ex.done .c { color: var(--mint); }
+
+  .dayline { display: grid; gap: 6px; }
+  .dayline .lbl { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--chalk-3); font-variant-numeric: tabular-nums; }
+
+  /* notification */
+  .lock { background: radial-gradient(120% 80% at 30% 10%, #2B2622 0%, #121314 60%); }
+  .clock { text-align: center; padding-top: 22px; display: grid; gap: 0; }
+  .clock small { font-size: 14px; font-weight: 600; color: var(--chalk-2); }
+  .clock b { font-family: var(--disp); font-size: 72px; font-weight: 700; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .notif { margin: 34px 10px 0; background: rgba(40,40,42,.82); border-radius: 20px; padding: 12px; display: grid; gap: 4px; }
+  .notif .app { display: flex; gap: 8px; align-items: center; font-size: 11.5px; color: var(--chalk-2); }
+  .notif .app i { width: 20px; height: 20px; border-radius: 5px; background: var(--graphite); display: grid; place-items: center; }
+  .notif .app span { margin-left: auto; color: var(--chalk-3); }
+  .notif b { font-size: 13.5px; }
+  .notif p { font-size: 13px; color: var(--chalk); }
+  .actions { margin: 8px 10px 0; background: rgba(40,40,42,.82); border-radius: 14px; overflow: hidden; }
+  .actions div { padding: 11px 14px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .actions div:last-child { border-bottom: 0; color: var(--chalk-2); }
+  .hint { margin: 14px 18px 0; font-size: 11.5px; color: var(--chalk-3); text-align: center; }
+
+  /* detail */
+  .kv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .kv div { background: var(--surface); border-radius: 14px; padding: 10px; display: grid; gap: 2px; }
+  .kv small { font-size: 10.5px; color: var(--chalk-3); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  .kv b { font-family: var(--disp); font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .kv b.acc { color: var(--berry); }
+  .card { background: var(--surface); border-radius: 16px; padding: 12px; display: grid; gap: 8px; }
+  .card .t { display: flex; justify-content: space-between; font-size: 12px; color: var(--chalk-3); }
+  .retest { background: rgba(245,184,61,.12); border: 1px solid rgba(245,184,61,.35); border-radius: 14px; padding: 10px 12px; font-size: 12.5px; color: var(--chalk); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .retest b { color: var(--amber); }
+  .field { display: flex; justify-content: space-between; padding: 10px 12px; background: var(--surface); border-radius: 12px; font-size: 13px; }
+  .field span { color: var(--chalk-3); }
+
+  /* calendar */
+  .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+  .cal .d { aspect-ratio: 1; border-radius: 8px; display: grid; place-items: center; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--chalk-3); }
+  .cal .h { font-size: 10px; color: var(--chalk-3); text-align: center; font-weight: 600; }
+  .cal .full { background: var(--chalk); color: var(--ground); font-weight: 700; }
+  .cal .part { background: linear-gradient(to top, rgba(237,234,227,.5) 50%, var(--raised) 50%); color: var(--chalk); }
+  .cal .rest { background: transparent; border: 1px dashed var(--line); }
+  .cal .miss { background: var(--raised); }
+  .cal .today { outline: 2px solid var(--berry); outline-offset: 1px; background: var(--raised); color: var(--chalk); font-weight: 700; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11px; color: var(--chalk-3); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+  .week { display: grid; gap: 6px; }
+  .week div { display: grid; grid-template-columns: 90px 1fr auto; gap: 8px; align-items: center; font-size: 12px; }
+  .week .bar { height: 6px; border-radius: 3px; background: var(--raised); overflow: hidden; }
+  .week .bar i { display: block; height: 100%; background: var(--chalk-2); }
+  .week span { color: var(--chalk-3); font-variant-numeric: tabular-nums; }
+
+  .screens-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+  .screens-list div { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); display: grid; gap: 4px; align-content: start; }
+  .screens-list b { font-size: 14px; }
+  .screens-list p { font-size: 13.5px; }
+  .note { font-size: 13px; color: var(--chalk-3); }
+  :focus-visible { outline: 2px solid var(--berry); outline-offset: 2px; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- one tally group: 4 strokes + diagonal -->
+    <symbol id="s" viewBox="0 0 6 26"><path d="M3 2 L3 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Charte graphique · validée</div>
+      <h1>GrooveCore</h1>
+      <p class="lede">Grease the groove, c'est une addition de petites séries tout au long de la journée. L'identité part de là : <b>chaque série est un bâton de comptage</b>, tracé à la craie, regroupé par cinq comme on compte sur un mur de salle d'escalade. Même famille que You Can Do Hiit (fond graphite, gros chiffres), mais son propre signe et sa propre couleur : la groseille remplace l'orange.</p>
+    </div>
+    <div class="icon" aria-label="Icône d'app proposée">
+      <svg width="92" height="80" viewBox="0 0 92 80" aria-hidden="true">
+        <g stroke="#EDEAE3" stroke-width="8" stroke-linecap="round" fill="none">
+          <path d="M16 10 L14 70"/><path d="M34 10 L33 70"/><path d="M52 10 L53 70"/><path d="M70 10 L71 70"/>
+        </g>
+        <path d="M6 58 L84 22" stroke="#FF4D6D" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+  </header>
+
+  <section>
+    <div class="head">
+      <div class="eyebrow">Couleurs</div>
+      <h2>Graphite, craie, groseille</h2>
+      <p>La craie remplace le blanc pur, et le graphite reste légèrement chaud pour que les deux aillent ensemble. La groseille est réservée à ce qui se fait <b style="color:var(--chalk)">maintenant</b> : le prochain bloc et le bouton « Fait ». Tout le reste est en craie et en gris.</p>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0E0F10;border-bottom:1px solid var(--line)"></div><div class="meta"><b>Graphite</b><code>#0E0F10</code><span>Fond d'écran</span></div></div>
+      <div class="sw"><div class="chip" style="background:#1C1D1E"></div><div class="meta"><b>Ardoise</b><code>#1C1D1E · #27282A</code><span>Cartes, champs</span></div></div>
+      <div class="sw"><div class="chip" style="background:#EDEAE3"></div><div class="meta"><b>Craie</b><code>#EDEAE3</code><span>Texte, bâtons faits</span></div></div>
+      <div class="sw"><div class="chip" style="background:#FF4D6D"></div><div class="meta"><b>Groseille</b><code>#FF4D6D</code><span>Action du moment · remplace l'orange de Hiit</span></div></div>
+      <div class="sw"><div class="chip" style="background:#5FD39A"></div><div class="meta"><b>Menthe</b><code>#5FD39A</code><span>Objectif du jour atteint</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F5B83D"></div><div class="meta"><b>Ambre</b><code>#F5B83D</code><span>Re-test du max à faire</span></div></div>
+    </div>
+    <div class="light-row">
+      <span class="note">Mode clair (même rôles) :</span>
+      <span class="l"><i style="background:#F3F2EF"></i>fond <code>#F3F2EF</code></span>
+      <span class="l"><i style="background:#FFFFFF"></i>carte <code>#FFFFFF</code></span>
+      <span class="l"><i style="background:#1C1B19"></i>encre <code>#1C1B19</code></span>
+      <span class="l"><i style="background:#D42A50"></i>groseille <code>#D42A50</code></span>
+      <span class="l"><i style="background:#1F9D63"></i>menthe <code>#1F9D63</code></span>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <div class="eyebrow">Typographie</div>
+      <h2>SF Pro, rien d'autre</h2>
+      <p>Police système d'iOS : zéro fichier à embarquer, Dynamic Type gratuit. Le caractère vient des chiffres : SF Pro Display en Heavy, chiffres à chasse fixe, pour que « 9 » → « 10 » ne fasse rien bouger.</p>
+    </div>
+    <div class="typeset">
+      <div class="trow"><div class="spec">Compteur<br>Display Heavy 44 · monospacedDigit</div><div style="font-family:var(--disp);font-size:44px;font-weight:800;line-height:1" class="num">27<span style="color:var(--chalk-3);font-weight:600"> / 44</span></div></div>
+      <div class="trow"><div class="spec">Titre d'écran<br>Display Heavy 30</div><div style="font-family:var(--disp);font-size:30px;font-weight:800">Aujourd'hui</div></div>
+      <div class="trow"><div class="spec">Titre de carte<br>Text Semibold 17</div><div style="font-size:17px;font-weight:600">Tractions pronation</div></div>
+      <div class="trow"><div class="spec">Corps<br>Text Regular 15</div><div style="font-size:15px;color:var(--chalk-2)">5 reps par série, soit 50 % de ton max de 10.</div></div>
+      <div class="trow"><div class="spec">Étiquette<br>Text Semibold 12 · capitales · +6 %</div><div class="eyebrow" style="color:var(--chalk-3)">Prochain bloc · 14:30</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <div class="eyebrow">Règles</div>
+      <h2>Ce qui tient l'ensemble</h2>
+    </div>
+    <div class="rules">
+      <div class="rule"><h3>Le bâton est l'unité</h3><p>Une série = un bâton. Le cinquième barre les quatre autres. Bâton plein = fait, pointillé = restant du jour. Pas de barres de progression ni d'anneaux.</p></div>
+      <div class="rule"><h3>Une seule touche de groseille par écran</h3><p>Le prochain bloc ou le bouton principal, jamais les deux ailleurs. L'onglet actif la porte aussi, en petit.</p></div>
+      <div class="rule"><h3>Cartes sans ombre</h3><p>Hiérarchie par superposition (graphite → ardoise) et filets de 1 px. Rayon 16 pour les cartes, 12 pour les boutons.</p></div>
+      <div class="rule"><h3>Retours discrets</h3><p>Haptique « success » quand un bloc est noté, « rigid » sur chaque +1. Le bâton se trace en 180 ms, coupé si « Réduire les animations » est actif.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <div class="eyebrow">Design · section 2 sur 4</div>
+      <h2>Les écrans</h2>
+      <p>Quatre onglets, comme Hiit. Les chiffres ci-dessous sont un exemple, pas tes données.</p>
+    </div>
+
+    <div class="phones">
+
+      <figure class="screen">
+        <div class="phone">
+          <div class="status"><span class="num">14:28</span><span class="island"></span><span>●●●</span></div>
+          <div class="body">
+            <div class="ptitle">
+              <div><small>Samedi 26 sept.</small><h4>Aujourd'hui</h4></div>
+              <span class="streak"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><g stroke="#EDEAE3" stroke-width="1.6" stroke-linecap="round"><path d="M2 1v10M5 1v10M8 1v10M11 1v10"/></g><path d="M0.5 9 L13.5 3" stroke="#FF4D6D" stroke-width="1.6" stroke-linecap="round"/></svg><span class="num">11 j</span></span>
+            </div>
+            <div class="next">
+              <div class="top"><b>Prochain bloc</b><span class="num">14:30</span></div>
+              <ul>
+                <li><span>Tractions</span><em>5</em></li>
+                <li><span>Pompes</span><em>12</em></li>
+                <li><span>Pistol squat <span style="color:var(--chalk-3)">/ jambe</span></span><em>3</em></li>
+              </ul>
+              <div class="btns"><div class="btn primary">Fait</div><div class="btn ghost">Passer</div></div>
+            </div>
+            <div class="rows" data-tally-list>
+              <div class="ex" data-done="5" data-goal="8"><span class="n">Tractions</span><span class="c num">5 / 8</span><div class="tally"></div></div>
+              <div class="ex" data-done="6" data-goal="8"><span class="n">Pompes</span><span class="c num">6 / 8</span><div class="tally"></div></div>
+              <div class="ex done" data-done="6" data-goal="6"><span class="n">Dips</span><span class="c num">6 / 6 ✓</span><div class="tally"></div></div>
+              <div class="ex" data-done="4" data-goal="8"><span class="n">Squats</span><span class="c num">4 / 8</span><div class="tally"></div></div>
+              <div class="ex" data-done="2" data-goal="5"><span class="n">Hollow hold · 20 s</span><span class="c num">2 / 5</span><div class="tally"></div></div>
+            </div>
+          </div>
+          <div class="tabbar" data-tabs="0"></div>
+        </div>
+        <figcaption><b>Aujourd'hui</b><span>Prochain bloc en haut, bâtons de chaque exercice dessous. La liste défile pour 10+ exercices.</span></figcaption>
+      </figure>
+
+      <figure class="screen">
+        <div class="phone lock">
+          <div class="status"><span></span><span class="island"></span><span>●●●</span></div>
+          <div class="clock"><small>samedi 26 septembre</small><b>14:30</b></div>
+          <div class="notif">
+            <div class="app"><i><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><g stroke="#EDEAE3" stroke-width="1.6" stroke-linecap="round"><path d="M2 1v10M5 1v10M8 1v10M11 1v10"/></g><path d="M0.5 9 L13.5 3" stroke="#FF4D6D" stroke-width="1.6" stroke-linecap="round"/></svg></i>GROOVECORE<span>maintenant</span></div>
+            <b>Bloc de 14:30</b>
+            <p>5 tractions · 12 pompes · 3 pistol squats</p>
+          </div>
+          <div class="actions"><div>Fait</div><div>Passer</div></div>
+          <p class="hint">Appui long sur la notif. « Fait » note le bloc sans ouvrir l'app.</p>
+        </div>
+        <figcaption><b>Rappel</b><span>Le bloc tient en une ligne. « Passer » redistribue ses séries sur les créneaux suivants.</span></figcaption>
+      </figure>
+
+      <figure class="screen">
+        <div class="phone">
+          <div class="status"><span class="num">09:12</span><span class="island"></span><span>●●●</span></div>
+          <div class="body">
+            <div class="ptitle"><div><small>Programme</small><h4>Tractions</h4></div></div>
+            <div class="kv">
+              <div><small>Max</small><b>10</b></div>
+              <div><small>Travail</small><b>50 %</b></div>
+              <div><small>Reps</small><b class="acc">5</b></div>
+            </div>
+            <div class="card">
+              <div class="t"><span>Évolution du max</span><span class="num">4 tests</span></div>
+              <svg viewBox="0 0 250 110" width="100%" aria-label="Max : 6 le 20 août, 7 le 30 août, 8 le 8 sept., 10 le 18 sept.">
+                <!-- y: 0..12 → 90..10 ; x: 20 août..18 sept (29 j) → 24..236 -->
+                <g stroke="#333436" stroke-width="1">
+                  <path d="M24 90H240M24 63.3H240M24 36.7H240M24 10H240"/>
+                </g>
+                <g fill="#6F6D69" font-size="9" font-family="-apple-system,sans-serif" text-anchor="end">
+                  <text x="18" y="93">0</text><text x="18" y="66">4</text><text x="18" y="40">8</text><text x="18" y="13">12</text>
+                </g>
+                <path d="M24 50 L97.1 43.3 L162.9 36.7 L236 23.3 L236 90 L24 90 Z" fill="rgba(237,234,227,.07)"/>
+                <path d="M24 50 L97.1 43.3 L162.9 36.7 L236 23.3" stroke="#A9A6A0" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                <g fill="#A9A6A0"><circle cx="24" cy="50" r="3"/><circle cx="97.1" cy="43.3" r="3"/><circle cx="162.9" cy="36.7" r="3"/></g>
+                <circle cx="236" cy="23.3" r="4.5" fill="#EDEAE3"/>
+                <g fill="#6F6D69" font-size="9" font-family="-apple-system,sans-serif">
+                  <text x="24" y="105" text-anchor="start">20 août</text><text x="236" y="105" text-anchor="end">18 sept.</text>
+                </g>
+              </svg>
+            </div>
+            <div class="retest"><span>Re-test du max dans <b class="num">2 jours</b></span><span style="color:var(--chalk-3)">›</span></div>
+            <div class="field"><span>Séries par jour</span><b class="num">8</b></div>
+            <div class="field"><span>Reps fixées à la main</span><b>Non</b></div>
+            <div class="field"><span>Re-test tous les</span><b class="num">10 j</b></div>
+          </div>
+          <div class="tabbar" data-tabs="1"></div>
+        </div>
+        <figcaption><b>Fiche exercice</b><span>Max, % et reps. Le % ou les reps se modifient d'un tap, et l'historique des tests s'affiche dessous.</span></figcaption>
+      </figure>
+
+      <figure class="screen">
+        <div class="phone">
+          <div class="status"><span class="num">21:40</span><span class="island"></span><span>●●●</span></div>
+          <div class="body">
+            <div class="ptitle"><div><small>Septembre</small><h4>Historique</h4></div><span class="streak"><span class="num">record 15 j</span></span></div>
+            <div class="cal" id="cal"></div>
+            <div class="legend"><span><i style="background:var(--chalk)"></i>objectif</span><span><i style="background:rgba(237,234,227,.5)"></i>partiel</span><span><i style="border:1px dashed var(--chalk-3)"></i>repos</span><span><i style="background:var(--raised)"></i>manqué</span></div>
+            <div class="card">
+              <div class="t"><span>Cette semaine</span><span class="num">reps</span></div>
+              <div class="week">
+                <div><b style="font-weight:500">Pompes</b><span class="bar"><i style="width:100%"></i></span><span>384</span></div>
+                <div><b style="font-weight:500">Squats</b><span class="bar"><i style="width:94%"></i></span><span>360</span></div>
+                <div><b style="font-weight:500">Tractions</b><span class="bar"><i style="width:42%"></i></span><span>160</span></div>
+                <div><b style="font-weight:500">Dips</b><span class="bar"><i style="width:36%"></i></span><span>138</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="tabbar" data-tabs="2"></div>
+        </div>
+        <figcaption><b>Historique</b><span>Un mois en un coup d'œil, puis le volume de la semaine par exercice.</span></figcaption>
+      </figure>
+
+    </div>
+
+    <div class="screens-list">
+      <div><b>Premier lancement</b><p>1. Choisir ses exercices dans la bibliothèque (ou en créer). 2. Entrer son max connu ou le tester. 3. Plage horaire, jours de repos, puis autorisation des notifications.</p></div>
+      <div><b>Onglet Programme</b><p>Liste des exercices actifs avec reps et objectif. Ajouter, mettre en pause, réordonner. Un tap ouvre la fiche exercice ci-dessus.</p></div>
+      <div><b>Test de max</b><p>Écran plein avec un gros compteur +1 (ou chrono pour le gainage). Valider → nouvelles reps proposées, avec confirmation si tes reps étaient fixées à la main.</p></div>
+      <div><b>Onglet Réglages</b><p>Plage horaire, intervalle, taille max d'un bloc, jours de repos, % par défaut, notifications. Le garde-fou « objectif trop élevé » s'affiche ici.</p></div>
+      <div><b>Détail d'un bloc</b><p>Tap sur la notif ou sur le prochain bloc : reps de chaque exercice modifiables avant de valider. Utile quand une série a été plus courte.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Tally marks: groups of five, the fifth crosses the four
+  function tally(done, goal) {
+    const W = 6, H = 20, G = 10;
+    const groups = Math.ceil(goal / 5);
+    let x = 0, out = '';
+    for (let g = 0; g < groups; g++) {
+      const start = g * 5, n = Math.min(5, goal - start);
+      const gx = x;
+      for (let i = 0; i < Math.min(4, n); i++) {
+        const k = start + i, on = k < done;
+        out += `<path d="M${x + 3} 3 L${x + 3} ${H - 1}" stroke="${on ? '#EDEAE3' : '#4A4B4D'}" stroke-width="2.4" stroke-linecap="round" ${on ? '' : 'stroke-dasharray="2 3"'} fill="none"/>`;
+        x += W;
+      }
+      if (n === 5) {
+        const on = start + 4 < done;
+        out += `<path d="M${gx - 1} ${H - 4} L${gx + 4 * W + 1} 6" stroke="${on ? '#EDEAE3' : '#4A4B4D'}" stroke-width="2.4" stroke-linecap="round" ${on ? '' : 'stroke-dasharray="2 3"'} fill="none"/>`;
+      }
+      x += G;
+    }
+    return `<svg width="${x}" height="${H + 2}" viewBox="0 0 ${x} ${H + 2}" aria-label="${done} séries sur ${goal}">${out}</svg>`;
+  }
+  document.querySelectorAll('.ex').forEach(el => {
+    el.querySelector('.tally').innerHTML = tally(+el.dataset.done, +el.dataset.goal);
+  });
+
+  // Tab bar
+  const tabs = [
+    ['Aujourd\'hui', '<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"><path d="M5 4v12M9 4v12M13 4v12"/><path d="M2 13 L17 6"/></g>'],
+    ['Programme', '<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"><path d="M3 5h14M3 10h14M3 15h9"/></g>'],
+    ['Historique', '<g stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="14" height="13" rx="3"/><path d="M3 8h14" stroke-linecap="round"/></g>'],
+    ['Réglages', '<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"><path d="M3 6h8M15 6h2M3 14h2M9 14h8"/><circle cx="13" cy="6" r="2"/><circle cx="7" cy="14" r="2"/></g>']
+  ];
+  document.querySelectorAll('.tabbar').forEach(bar => {
+    const on = +bar.dataset.tabs;
+    bar.innerHTML = tabs.map((t, i) => `<div class="tab${i === on ? ' on' : ''}"><svg viewBox="0 0 20 20">${t[1]}</svg>${t[0]}</div>`).join('');
+  });
+
+  // September 2026 calendar (starts on Tuesday), example states
+  const cal = document.getElementById('cal');
+  const heads = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  let html = heads.map(h => `<div class="h">${h}</div>`).join('');
+  html += '<div></div>';
+  const miss = [3, 10, 12], part = [2, 9];
+  for (let d = 1; d <= 30; d++) {
+    let cls = 'full';
+    if ([6, 13, 20].includes(d)) cls = 'rest';
+    else if (miss.includes(d)) cls = 'miss';
+    else if (part.includes(d)) cls = 'part';
+    if (d === 26) cls = 'today';
+    if (d > 26) cls = d === 27 ? 'rest' : '';
+    html += `<div class="d ${cls}">${d}</div>`;
+  }
+  cal.innerHTML = html;
+</script>
