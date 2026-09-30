@@ -7,7 +7,7 @@ mkdir -p "$OUT"
 DEVICE="iPhone 17"
 BUNDLE=com.maelrochard.groovecore
 xcodegen generate >/dev/null
-xcodebuild -project GrooveCore.xcodeproj -scheme GrooveCore -destination "platform=iOS Simulator,name=$DEVICE,OS=26.5" \
+xcodebuild -project GrooveCore.xcodeproj -scheme GrooveCore -destination "platform=iOS Simulator,name=$DEVICE" \
   -derivedDataPath build build -quiet
 xcrun simctl boot "$DEVICE" 2>/dev/null || true
 xcrun simctl uninstall booted $BUNDLE 2>/dev/null || true
