@@ -11,7 +11,7 @@ settings:
   base:
     DEVELOPMENT_TEAM: 85228RBZF6
     MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
     SWIFT_VERSION: "5.0"
 targets:
   GrooveCore:
@@ -25,6 +25,8 @@ targets:
       path: App/Info.plist
       properties:
         CFBundleDisplayName: GrooveCore
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, fr]
         UILaunchScreen:

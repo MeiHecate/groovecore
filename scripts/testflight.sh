@@ -33,6 +33,7 @@ cat > "$OUT"/ExportOptions.plist <<'PLIST'
   <key>teamID</key><string>85228RBZF6</string>
 </dict></plist>
 PLIST
+# Export with the Xcode account, not the API key: the key has no cloud signing permission.
 xcodebuild -exportArchive -archivePath "$OUT"/GrooveCore.xcarchive \
-  -exportPath "$OUT"/export -exportOptionsPlist "$OUT"/ExportOptions.plist "${AUTH[@]}" -quiet
+  -exportPath "$OUT"/export -exportOptionsPlist "$OUT"/ExportOptions.plist -quiet
 echo "Build $BUILD prêt : $OUT/export/GrooveCore.ipa"
